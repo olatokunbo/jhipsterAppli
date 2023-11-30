@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = fr.omnilog.config.\
+    TestContainersSpringContextCustomizerFactory,fr.omnilog.config.\
+    SqlTestContainersSpringContextCustomizerFactory
