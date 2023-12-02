@@ -40,6 +40,8 @@ export default class NavbarComponent implements OnInit {
     private router: Router,
   ) {
     if (VERSION) {
+      console.log(VERSION);
+
       this.version = VERSION.toLowerCase().startsWith('v') ? VERSION : `v${VERSION}`;
     }
   }
