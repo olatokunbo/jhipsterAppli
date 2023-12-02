@@ -1,0 +1,30 @@
+{
+  "jhipsterAppliApp": {
+    "uniteAdministrative": {
+      "home": {
+        "title": "Unite Administratives",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Unite Administrative",
+        "createOrEditLabel": "Create or edit a Unite Administrative",
+        "search": "Search for Unite Administrative",
+        "notFound": "No Unite Administratives found"
+      },
+      "created": "A new Unite Administrative is created with identifier {{ param }}",
+      "updated": "A Unite Administrative is updated with identifier {{ param }}",
+      "deleted": "A Unite Administrative is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Unite Administrative {{ id }}?"
+      },
+      "detail": {
+        "title": "Unite Administrative"
+      },
+      "id": "ID",
+      "code": "Code",
+      "ordre": "Ordre",
+      "libelle": "Libelle",
+      "uniteAdministrativeListFils": "Unite Administrative List Fils",
+      "typeUniteAdministrative": "Type Unite Administrative",
+      "uniteAdministrativeParent": "Unite Administrative Parent"
+    }
+  }
+}
