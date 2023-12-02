@@ -1,0 +1,44 @@
+{
+  "applications": "*",
+  "changelogDate": "20231130193515",
+  "entityTableName": "valeur",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ordre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "abreviation",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "name": "Valeur",
+  "relationships": [
+    {
+      "otherEntityName": "valeur",
+      "otherEntityRelationshipName": "valeurParent",
+      "relationshipName": "valeurListFils",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "valeur",
+      "otherEntityRelationshipName": "valeurListFils",
+      "relationshipName": "valeurParent",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ]
+}

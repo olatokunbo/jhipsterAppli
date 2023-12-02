@@ -48,6 +48,8 @@ public class CacheConfiguration {
             createCache(cm, fr.omnilog.domain.User.class.getName());
             createCache(cm, fr.omnilog.domain.Authority.class.getName());
             createCache(cm, fr.omnilog.domain.User.class.getName() + ".authorities");
+            createCache(cm, fr.omnilog.domain.Valeur.class.getName());
+            createCache(cm, fr.omnilog.domain.Valeur.class.getName() + ".valeurListFils");
             // jhipster-needle-ehcache-add-entry
         };
     }
