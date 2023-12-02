@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="valeur">
+      <h2 data-cy="valeurDetailsHeading"><span jhiTranslate="jhipsterAppliApp.valeur.detail.title">Valeur</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ valeur.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.valeur.code">Code</span></dt>
+        <dd>
+          <span>{{ valeur.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.valeur.ordre">Ordre</span></dt>
+        <dd>
+          <span>{{ valeur.ordre }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.valeur.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ valeur.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.valeur.abreviation">Abreviation</span></dt>
+        <dd>
+          <span>{{ valeur.abreviation }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.valeur.description">Description</span></dt>
+        <dd>
+          <span>{{ valeur.description }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.valeur.valeurListFils">Valeur List Fils</span></dt>
+        <dd>
+          <div *ngIf="valeur.valeurListFils">
+            <a [routerLink]="['/valeur', valeur.valeurListFils.id, 'view']">{{ valeur.valeurListFils.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/valeur', valeur.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>
