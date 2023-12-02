@@ -1,0 +1,31 @@
+{
+  "jhipsterAppliApp": {
+    "valeur": {
+      "home": {
+        "title": "Valeurs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Valeur",
+        "createOrEditLabel": "Create or edit a Valeur",
+        "search": "Search for Valeur",
+        "notFound": "No Valeurs found"
+      },
+      "created": "A new Valeur is created with identifier {{ param }}",
+      "updated": "A Valeur is updated with identifier {{ param }}",
+      "deleted": "A Valeur is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Valeur {{ id }}?"
+      },
+      "detail": {
+        "title": "Valeur"
+      },
+      "id": "ID",
+      "code": "Code",
+      "ordre": "Ordre",
+      "libelle": "Libelle",
+      "abreviation": "Abreviation",
+      "description": "Description",
+      "valeurListFil": "Valeur List Fil",
+      "valeurParent": "Valeur Parent"
+    }
+  }
+}
