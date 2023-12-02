@@ -1,0 +1,32 @@
+
+entity Valeur {
+	code String
+	ordre Integer
+	libelle String
+    abreviation String
+    description String
+}
+
+entity UniteAdministrative {
+	code String
+  	ordre Integer
+  	libelle String
+}
+
+relationship OneToMany {
+	Valeur{valeurListFils} to Valeur{valeurParent}
+    UniteAdministrative{uniteAdministrativeListFils} to UniteAdministrative{uniteAdministrativeParent}
+}
+
+relationship ManyToOne {
+	UniteAdministrative{typeUniteAdministrative} to Valeur
+}
+
+// Set pagination options
+paginate Valeur, UniteAdministrative with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all
+service all with serviceImpl

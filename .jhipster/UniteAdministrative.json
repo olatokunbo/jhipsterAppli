@@ -1,0 +1,45 @@
+{
+  "applications": "*",
+  "changelogDate": "20231130193615",
+  "dto": "mapstruct",
+  "entityTableName": "unite_administrative",
+  "fields": [
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "ordre",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "libelle",
+      "fieldType": "String"
+    }
+  ],
+  "name": "UniteAdministrative",
+  "pagination": "pagination",
+  "relationships": [
+    {
+      "otherEntityName": "uniteAdministrative",
+      "otherEntityRelationshipName": "uniteAdministrativeParent",
+      "relationshipName": "uniteAdministrativeListFils",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "valeur",
+      "relationshipName": "typeUniteAdministrative",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "uniteAdministrative",
+      "otherEntityRelationshipName": "uniteAdministrativeListFils",
+      "relationshipName": "uniteAdministrativeParent",
+      "relationshipSide": "right",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceImpl"
+}

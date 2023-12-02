@@ -1,0 +1,95 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-unite-administrative-heading"
+        data-cy="UniteAdministrativeCreateUpdateHeading"
+        jhiTranslate="jhipsterAppliApp.uniteAdministrative.home.createOrEditLabel"
+      >
+        Créer ou éditer un Unite Administrative
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterAppliApp.uniteAdministrative.code" for="field_code">Code</label>
+          <input type="text" class="form-control" name="code" id="field_code" data-cy="code" formControlName="code" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterAppliApp.uniteAdministrative.ordre" for="field_ordre">Ordre</label>
+          <input type="number" class="form-control" name="ordre" id="field_ordre" data-cy="ordre" formControlName="ordre" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="jhipsterAppliApp.uniteAdministrative.libelle" for="field_libelle">Libelle</label>
+          <input type="text" class="form-control" name="libelle" id="field_libelle" data-cy="libelle" formControlName="libelle" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterAppliApp.uniteAdministrative.typeUniteAdministrative"
+            for="field_typeUniteAdministrative"
+            >Type Unite Administrative</label
+          >
+          <select
+            class="form-control"
+            id="field_typeUniteAdministrative"
+            data-cy="typeUniteAdministrative"
+            name="typeUniteAdministrative"
+            formControlName="typeUniteAdministrative"
+            [compareWith]="compareValeur"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="valeurOption" *ngFor="let valeurOption of valeursSharedCollection">{{ valeurOption.id }}</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="jhipsterAppliApp.uniteAdministrative.uniteAdministrativeParent"
+            for="field_uniteAdministrativeParent"
+            >Unite Administrative Parent</label
+          >
+          <select
+            class="form-control"
+            id="field_uniteAdministrativeParent"
+            data-cy="uniteAdministrativeParent"
+            name="uniteAdministrativeParent"
+            formControlName="uniteAdministrativeParent"
+            [compareWith]="compareUniteAdministrative"
+          >
+            <option [ngValue]="null"></option>
+            <option [ngValue]="uniteAdministrativeOption" *ngFor="let uniteAdministrativeOption of uniteAdministrativesSharedCollection">
+              {{ uniteAdministrativeOption.id }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Annuler</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Sauvegarder</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

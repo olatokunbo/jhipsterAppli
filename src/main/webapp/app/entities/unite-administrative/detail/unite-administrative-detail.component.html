@@ -1,0 +1,58 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="uniteAdministrative">
+      <h2 data-cy="uniteAdministrativeDetailsHeading">
+        <span jhiTranslate="jhipsterAppliApp.uniteAdministrative.detail.title">Unite Administrative</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ uniteAdministrative.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.uniteAdministrative.code">Code</span></dt>
+        <dd>
+          <span>{{ uniteAdministrative.code }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.uniteAdministrative.ordre">Ordre</span></dt>
+        <dd>
+          <span>{{ uniteAdministrative.ordre }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.uniteAdministrative.libelle">Libelle</span></dt>
+        <dd>
+          <span>{{ uniteAdministrative.libelle }}</span>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.uniteAdministrative.typeUniteAdministrative">Type Unite Administrative</span></dt>
+        <dd>
+          <div *ngIf="uniteAdministrative.typeUniteAdministrative">
+            <a [routerLink]="['/valeur', uniteAdministrative.typeUniteAdministrative.id, 'view']">{{
+              uniteAdministrative.typeUniteAdministrative.id
+            }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="jhipsterAppliApp.uniteAdministrative.uniteAdministrativeParent">Unite Administrative Parent</span></dt>
+        <dd>
+          <div *ngIf="uniteAdministrative.uniteAdministrativeParent">
+            <a [routerLink]="['/unite-administrative', uniteAdministrative.uniteAdministrativeParent.id, 'view']">{{
+              uniteAdministrative.uniteAdministrativeParent.id
+            }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Retour</span>
+      </button>
+
+      <button type="button" [routerLink]="['/unite-administrative', uniteAdministrative.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Editer</span>
+      </button>
+    </div>
+  </div>
+</div>
