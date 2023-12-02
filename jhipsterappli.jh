@@ -1,0 +1,12 @@
+
+entity Valeur {
+	code String
+	ordre Integer
+	libelle String
+    abreviation String
+    description String
+}
+
+relationship ManyToOne {
+	Valeur{valeurParent} to Valeur
+}
